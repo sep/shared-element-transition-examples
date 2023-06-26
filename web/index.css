@@ -1,0 +1,55 @@
+:root {
+  --s-page-padding: 20px;
+  --c-border: black;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-color: var(--c-border);
+  border-style: solid;
+  border-width: 0;
+}
+
+body {
+  margin: var(--s-page-padding);
+  view-transition-name: page-background;
+}
+
+.home-title {
+  width: max-content;
+  max-width: 100%;
+}
+
+.article-preview-group {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.article-preview {
+}
+
+.article-preview-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: gray;
+}
+
+.article-preview-title {
+  width: max-content;
+}
+
+.article-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: gray;
+}
+
+.article-title {
+  width: max-content;
+  max-width: 100%;
+}

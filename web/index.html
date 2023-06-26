@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test View Transitions</title>
+    <script async defer src="./index.mjs"></script>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <template id="home">
+      <header class="header">
+        <h1 class="home-title" style="view-transition-name: last-title">
+          Articles
+        </h1>
+      </header>
+
+      <main class="content">
+        <div class="article-preview-group">
+          <article class="article-preview">
+            <img
+              class="article-preview-image"
+              src="assets/images/150.png"
+              role="presentation"
+              style="view-transition-name: article-1-image"
+            />
+            <h2
+              class="article-preview-title"
+              style="view-transition-name: article-1-title"
+            >
+              Article Name
+            </h2>
+            <button class="article-button" data-show-article="1">View</button>
+          </article>
+
+          <article class="article-preview">
+            <img
+              class="article-preview-image"
+              src="assets/images/150.png"
+              role="presentation"
+              style="view-transition-name: article-2-image"
+            />
+            <h2
+              class="article-preview-title"
+              style="view-transition-name: article-2-title"
+            >
+              Article 2 Name
+            </h2>
+            <button class="article-button" data-show-article="2">View</button>
+          </article>
+        </div>
+      </main>
+    </template>
+
+    <template data-article-id="1">
+      <header class="article-header">
+        <button style="view-transition-name: last-title" data-back>
+          &lt; Articles
+        </button>
+        <img
+          class="article-image"
+          src="assets/images/150.png"
+          role="presentation"
+          style="view-transition-name: article-1-image"
+        />
+        <h1 class="article-title" style="view-transition-name: article-1-title">
+          Article Name
+        </h1>
+      </header>
+
+      <main class="content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quod
+          cupiditate inventore dolorem harum, beatae laudantium ratione dolore
+          mollitia, sequi impedit sint voluptatum. Officia nobis asperiores
+          suscipit sit odit tenetur consectetur qui, impedit fugit, iusto
+          similique natus provident iste nihil quod illo ex delectus at maiores
+          alias commodi corporis labore?
+        </p>
+      </main>
+    </template>
+
+    <template data-article-id="2">
+      <header class="article-header">
+        <button style="view-transition-name: last-title" data-back>
+          &lt; Articles
+        </button>
+        <img
+          class="article-image"
+          src="assets/images/150.png"
+          role="presentation"
+          style="view-transition-name: article-2-image"
+        />
+        <h1 class="article-title" style="view-transition-name: article-2-title">
+          Article 2 Name
+        </h1>
+      </header>
+
+      <main class="content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quod
+          cupiditate inventore dolorem harum, beatae laudantium ratione dolore
+          mollitia, sequi impedit sint voluptatum. Officia nobis asperiores
+          suscipit sit odit tenetur consectetur qui, impedit fugit, iusto
+          similique natus provident iste nihil quod illo ex delectus at maiores
+          alias commodi corporis labore?
+        </p>
+      </main>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "test-view-transitions",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9"
+  }
+}
