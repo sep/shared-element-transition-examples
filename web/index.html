@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test View Transitions</title>
     <script async defer src="./index.mjs"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./index.css" />
   </head>
 
@@ -14,16 +20,16 @@
     <template id="home">
       <header class="header">
         <h1 class="home-title" style="view-transition-name: last-title">
-          Articles
+          Blog
         </h1>
       </header>
 
       <main class="content">
         <div class="article-preview-group">
-          <article class="article-preview">
+          <article class="article-preview" data-show-article="1">
             <img
               class="article-preview-image"
-              src="assets/images/150.png"
+              src="assets/images/hexter.svg"
               role="presentation"
               style="view-transition-name: article-1-image"
             />
@@ -31,15 +37,19 @@
               class="article-preview-title"
               style="view-transition-name: article-1-title"
             >
-              Article Name
+              How now brown cow? Nursery rhymes in the age of Artificial
+              Intelligence
             </h2>
-            <button class="article-button" data-show-article="1">View</button>
+            <div
+              style="view-transition-name: article-1-description"
+              aria-hidden="true"
+            ></div>
           </article>
 
-          <article class="article-preview">
+          <article class="article-preview" data-show-article="2">
             <img
               class="article-preview-image"
-              src="assets/images/150.png"
+              src="assets/images/hexter.svg"
               role="presentation"
               style="view-transition-name: article-2-image"
             />
@@ -49,7 +59,10 @@
             >
               Article 2 Name
             </h2>
-            <button class="article-button" data-show-article="2">View</button>
+            <div
+              style="view-transition-name: article-2-description"
+              aria-hidden="true"
+            ></div>
           </article>
         </div>
       </main>
@@ -57,21 +70,29 @@
 
     <template data-article-id="1">
       <header class="article-header">
-        <button style="view-transition-name: last-title" data-back>
-          &lt; Articles
+        <button
+          class="button button--secondary"
+          style="view-transition-name: last-title"
+          data-back
+        >
+          &lt; Blog
         </button>
         <img
           class="article-image"
-          src="assets/images/150.png"
+          src="assets/images/hexter.svg"
           role="presentation"
           style="view-transition-name: article-1-image"
         />
         <h1 class="article-title" style="view-transition-name: article-1-title">
-          Article Name
+          How now brown cow? Nursery rhymes in the age of Artificial
+          Intelligence
         </h1>
       </header>
 
-      <main class="content">
+      <main
+        class="content typography"
+        style="view-transition-name: article-1-description"
+      >
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quod
           cupiditate inventore dolorem harum, beatae laudantium ratione dolore
@@ -85,12 +106,16 @@
 
     <template data-article-id="2">
       <header class="article-header">
-        <button style="view-transition-name: last-title" data-back>
-          &lt; Articles
+        <button
+          class="button button--secondary"
+          style="view-transition-name: last-title"
+          data-back
+        >
+          &lt; Blog
         </button>
         <img
           class="article-image"
-          src="assets/images/150.png"
+          src="assets/images/hexter.svg"
           role="presentation"
           style="view-transition-name: article-2-image"
         />
@@ -99,7 +124,10 @@
         </h1>
       </header>
 
-      <main class="content">
+      <main
+        class="content typography"
+        style="view-transition-name: article-2-description"
+      >
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quod
           cupiditate inventore dolorem harum, beatae laudantium ratione dolore

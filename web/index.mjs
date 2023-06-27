@@ -1,13 +1,21 @@
 const appEl = document.getElementById("app");
 
-function showHomeScreen() {
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+function showHomeScreen(skipTransition = false) {
   const change = () => {
     const homeScreenTemplate = document.getElementById("home");
     appEl.innerHTML = homeScreenTemplate.innerHTML;
     initializeArticleGroups();
   };
 
-  if (document.startViewTransition) {
+  if (
+    document.startViewTransition &&
+    !skipTransition &&
+    !prefersReducedMotion
+  ) {
     document.startViewTransition(change);
   } else {
     change();
@@ -25,7 +33,7 @@ function showArticle(id) {
     });
   };
 
-  if (document.startViewTransition) {
+  if (document.startViewTransition && !prefersReducedMotion) {
     document.startViewTransition(change);
   } else {
     change();
@@ -38,12 +46,13 @@ function initializeArticleGroups() {
   );
   for (const articleGroup of articleGroups) {
     const onClick = (e) => {
-      const id = e.target.dataset.showArticle;
-      if (typeof id === "undefined") return;
+      if (e.target === e.currentTarget) return;
+      const article = e.target.closest("[data-show-article]");
+      const id = article.dataset.showArticle;
       showArticle(id);
     };
-    articleGroup.addEventListener("click", onClick);
+    articleGroup.addEventListener("click", onClick, { capture: true });
   }
 }
 
-showHomeScreen();
+showHomeScreen(true);
