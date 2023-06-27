@@ -11,7 +11,7 @@ import SwiftUI
 struct Test_View_TransitionsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BlogView()
         }
     }
 }
