@@ -124,7 +124,7 @@ struct BlogView: View {
                                 .frame(width: 40, height: 40)
                                 .background( .ultraThickMaterial, in: Circle())
                                 .shadow(radius: 5)
-                                .offset(y:12)
+                                .offset(y: 12)
                             }
                             .padding(.horizontal)
                         }.frame(maxWidth: .infinity)
